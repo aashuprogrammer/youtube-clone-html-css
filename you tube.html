@@ -1,0 +1,705 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Tube</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .left-tab-btn {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 12px 10px;
+        margin: 6px;
+      }
+      .left-tab-btn:hover {
+        background-color: beige;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+      .left-tab-btn p {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .first-tab-btn {
+        font-size: 15px;
+        color: white;
+        border: none;
+        font-weight: bold;
+        margin: 6px;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .tab-btn {
+        font-size: 15px;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+      .tab-btn:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- -------------------------- Header -------------- -->
+      <header style="display: flex; justify-content: space-between">
+        <!-- ----- Menu & Logo ------- -->
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+          <img
+            src="https://blog.logomyway.com/wp-content/uploads/2020/09/youtube-logo-4.jpg"
+            style="height: 30px; width: 120px"
+          />
+        </div>
+        <!-- -------------- Searchbar & mic --------------- -->
+        <div style="display: flex; align-items: center">
+          <input
+            type="text"
+            placeholder="Search"
+            style="
+              padding-left: 12px;
+              outline: none;
+              height: 40px;
+              width: 500px;
+              border-top-left-radius: 30px;
+              border-bottom-left-radius: 30px;
+            "
+          />
+          <div
+            style="
+              padding: 9px 18px;
+              border-top: 1px gray solid;
+              border-bottom: 1px gray solid;
+              border-right: 1px gray solid;
+              border-top-right-radius: 30px;
+              border-bottom-right-radius: 30px;
+              background-color: rgb(209, 205, 205);
+            "
+          >
+            <!-- ------------- Search SVG Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </div>
+          <div style="margin-left: 12px">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-mic-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z" />
+              <path
+                d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"
+              />
+            </svg>
+          </div>
+          <div></div>
+        </div>
+        <!-- -------------- Create Video & Login ----------- -->
+
+        <div style="display: flex; gap: 50px; align-items: center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-camera-reels-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+            <path
+              d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-bell"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-alexa"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M7.996 0A7.998 7.998 0 0 0 0 8a8 8 0 0 0 6.93 7.93v-1.613a1.06 1.06 0 0 0-.717-1.008A5.602 5.602 0 0 1 2.4 7.865 5.579 5.579 0 0 1 8.054 2.4a5.599 5.599 0 0 1 5.535 5.81l-.002.046a6.116 6.116 0 0 1-.012.192l-.005.061a4.85 4.85 0 0 1-.033.284l-.01.068c-.685 4.516-6.564 7.054-6.596 7.068A7.998 7.998 0 0 0 15.992 8 7.998 7.998 0 0 0 7.996.001Z"
+            />
+          </svg>
+        </div>
+      </header>
+      <!-- -------------------- ----------------------------------- -->
+      <div style="display: flex; width: 100%">
+        <!-- ------- Left Pannel -->
+        <div style="width: 15%; border-right: 2px gray solid">
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-house-door-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"
+              />
+            </svg>
+            <p>Home</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-arrow-down-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+            <p>Short</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-collection-play"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z"
+              />
+              <path
+                d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z"
+              />
+            </svg>
+
+            <p>Subscritions</p>
+          </div>
+          <hr />
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-film"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"
+              />
+            </svg>
+            <p>Library</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-clock-history"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"
+              />
+              <path
+                d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"
+              />
+              <path
+                d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"
+              />
+            </svg>
+            <p>History</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-play-btn"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"
+              />
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+              />
+            </svg>
+            <p>Your video</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-clock"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+              />
+              <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+              />
+            </svg>
+            <p>Watch later</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-scissors"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"
+              />
+            </svg>
+            <p>Your clips</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-hand-thumbs-up"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
+              />
+            </svg>
+            <p>Liked vidoe</p>
+          </div>
+          <hr />
+          <div class="left-tab-btn">
+            <p>Subscriptions</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-record-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+              />
+              <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            </svg>
+            <p>SKM SHANI</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-record-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z;"
+              />
+              <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            </svg>
+            <p>Sandeep Maheshwari</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-record-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+              />
+              <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            </svg>
+            <p>Satish K video</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-plus-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+              />
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+            <p>Browse Channels</p>
+          </div>
+          <div>
+            <hr />
+            <p style="padding: 12px">Explore</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-fire"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"
+              />
+            </svg>
+            <p>Trending</p>
+          </div>
+          <div class="left-tab-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-bag-heart"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+              />
+            </svg>
+            <p>Shoping</p>
+          </div>
+        </div>
+        <!-- ----------- Right pannel ----- -->
+        <div style="width: 85%; padding: 12px">
+          <button class="first-tab-btn">All</button>
+          <button class="tab-btn">Live</button>
+          <button class="tab-btn">Music</button>
+          <button class="tab-btn">News</button>
+          <button class="tab-btn">Mixes</button>
+          <button class="tab-btn">Weather Farecasting</button>
+          <button class="tab-btn">Movie musicals</button>
+          <button class="tab-btn">Dramedy</button>
+          <button class="tab-btn">Bollywood Music</button>
+          <button class="tab-btn">Bhajan music</button>
+          <button class="tab-btn">Computer</button>
+          <!-- ----------- Cards ---------------------------- -->
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; padding: 16px">
+            <!-- ---------------- Card 1 --------------- -->
+            <div style="max-width: 300px">
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  border-radius: 12px;
+                  aspect-ratio: 16/9;
+                  width: 100%;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/DrEvZKDqTX4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCu1z7cPcD1y8QvlPx_w7_k5FNdWw"
+              />
+              <div style="display: flex; gap: 5px">
+                <img
+                  style="aspect-ratio: 1/1"
+                  height="50px"
+                  src="https://yt3.ggpht.com/ytc/AGIKgqNSi6-7wm-EULJ1XZTvNmKg4mYY2GeATN0qHEBi=s88-c-k-c0x00ffffff-no-rj"
+                />
+                <p style="font-size: 15px">
+                  #Video | #रंजीत_सिंह | जवान कदी जीजा जी | #Ranjeet Singh |
+                  Jawan Kadi Jija Ji | Bhojpuri Hit Song 6.7M views 1 month ago
+                  Ranjeet Singh Official
+                </p>
+              </div>
+            </div>
+            <!-- ---------------- Card 2 --------------- -->
+            <div style="max-width: 300px">
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  border-radius: 12px;
+                  aspect-ratio: 16/9;
+                  width: 100%;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/gsuBefkfQj4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGDX-tSkhhAAjIIUQZ2xm6T53ELg"
+              />
+              <div style="display: flex; gap: 5px">
+                <img
+                  style="aspect-ratio: 1/1"
+                  height="50px"
+                  src="https://yt3.ggpht.com/ytc/AGIKgqNSi6-7wm-EULJ1XZTvNmKg4mYY2GeATN0qHEBi=s88-c-k-c0x00ffffff-no-rj"
+                />
+                <p style="font-size: 15px">
+                  #Pawan Singh - गोदी मे लेके (Godi Me Leke) #Shilpi Raj | Queen
+                  Shalinee | Bhojpuri Song 2023 | GMJ 42M views 2 months ago
+                </p>
+              </div>
+            </div>
+            <!-- ------------------------ Card 3 -------------------- -->
+            <div style="max-width: 300px">
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  border-radius: 12px;
+                  aspect-ratio: 16/9;
+                  width: 100%;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/pd7m819-4P8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwgsG6roR-SFGJZCY__GHJ5OhPww"
+              />
+              <div style="display: flex; gap: 5px">
+                <img
+                  style="aspect-ratio: 1/1"
+                  height="50px"
+                  src="https://yt3.ggpht.com/ytc/AGIKgqNSi6-7wm-EULJ1XZTvNmKg4mYY2GeATN0qHEBi=s88-c-k-c0x00ffffff-no-rj"
+                />
+                <p style="font-size: 15px">
+                  #Video - पाँचे के नाचे अइहा | #Pawan Singh | #शिल्पी_राज |
+                  Panche Ke Nache | Dimpal Singh | Hit Song 750K views 3 months
+                  ago
+                </p>
+              </div>
+            </div>
+            <!-- ------------------------ Card 4 -------------------- -->
+            <div style="max-width: 300px">
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  aspect-ratio: 16/9;
+                  border-radius: 12px;
+                  width: 100%;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/oJOKRI3ThwA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAW9-O8LHm9V85QKIyrfZnLkujn_w"
+              />
+              <div style="display: flex; gap: 5px">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow"
+                  alt
+                  height="50px"
+                  src="https://yt3.ggpht.com/Acjq7uxvkNrRAQ3bmiP7s_efNuQAQkwZTlJbkwE3OcCaRr-1lEsP914vprWs7G_OhYJGNPZy=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <p style="font-size: 15px">
+                  #Video | चढ़ाल जवानी रासगुलला | chadhal jawani rasgula |
+                  #Neelkaml singh | #shilpi Raj | New Song 1.5M views 2 weeks
+                  ago
+                </p>
+              </div>
+            </div>
+            <!-- ------------------ Card 5 --------------------- -->
+            <div style="max-width: 300px">
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  aspect-ratio: 16/9;
+                  border-radius: 12px;
+                  width: 100%;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/igQCv_Y33NI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLChy2wxQv-_VhATeyx-bIrOpk2oHA"
+              />
+              <div style="display: flex; gap: 5px">
+                <img
+                  style="aspect-ratio: 1/1"
+                  height="50px"
+                  src="https://yt3.ggpht.com/ytc/AGIKgqNSi6-7wm-EULJ1XZTvNmKg4mYY2GeATN0qHEBi=s88-c-k-c0x00ffffff-no-rj"
+                />
+                <p style="font-size: 15px">
+                  #Video | #रंजीत_सिंह | जवान कदी जीजा जी | #Ranjeet Singh |
+                  Jawan Kadi Jija Ji | Bhojpuri Hit Song 6.7M views 1 month ago
+                  Ranjeet Singh Official
+                </p>
+              </div>
+            </div>
+            <!-- ------------------------ Card 6 -------------------- -->
+            <div style="max-width: 300px">
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  aspect-ratio: 16/9;
+                  border-radius: 12px;
+                  width: 100%;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/m56tUHpjQ4w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAcMLRpx7Mkyknzcb_Gjf14ObhkXA"
+              />
+
+              <div style="display: flex; gap: 5px">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow"
+                  alt
+                  height="50px"
+                  src="https://yt3.ggpht.com/Acjq7uxvkNrRAQ3bmiP7s_efNuQAQkwZTlJbkwE3OcCaRr-1lEsP914vprWs7G_OhYJGNPZy=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <p style="font-size: 15px">
+                  #VIDEO | कमरिया पतरे पतरे | #Pawan Singh | #Khushbu Gajipuri,
+                  #Subham Jaikar | Bhojpuri Song 2022 8.3M views 5 months ago
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ----------------------------------- Shorts ----------------------------------------------------------------------- -->
+
+          <hr />
+          <div style="display: flex; padding: 25px; gap: 5px">
+            <img
+              style="width: 50px; height: 50px"
+              src="https://th.bing.com/th/id/OIP.fLNqVWTI16pNO96F9-MOlAAAAA?pid=ImgDet&rs=1;
+            "
+            />
+            <p style="font-size: 35px">Shorts</p>
+          </div>
+          <div style="display: flex; gap: 20px">
+            <div>
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  width: 200px;
+                  height: 320px;
+                  border-radius: 12px;
+                  cursor: pointer;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/D4Hiz8ZpxUU/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLA-5H_OduzNjjJ3te0KX1D_4zReMA"
+              />
+            </div>
+            <div>
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  width: 200px;
+                  height: 320px;
+                  border-radius: 12px;
+                  cursor: pointer;
+                "
+                src="https://i.ytimg.com/vi_webp/vrIVjVkW67A/oar2.webp"
+              />
+            </div>
+            <div>
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  width: 200px;
+                  height: 320px;
+                  border-radius: 12px;
+                  cursor: pointer;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/n6xcvHJQFoM/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBlADb9JsUTlnDYqrqyUgKk6xS-DA"
+              />
+            </div>
+            <div>
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  width: 200px;
+                  height: 320px;
+                  border-radius: 12px;
+                  cursor: pointer;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/RrXmG9oSKTQ/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLC0D2ZExDD00Msn-lEkOTBfAx5K0A"
+              />
+            </div>
+            <div>
+              <img
+                alt
+                style="
+                  background-color: transparent;
+                  width: 200px;
+                  height: 320px;
+                  border-radius: 12px;
+                  cursor: pointer;
+                "
+                class="yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"
+                src="https://i.ytimg.com/vi/uei7qzd5KGE/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLDdvL7CniCUTYZAPYo3LBBVm1aFZQ"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
